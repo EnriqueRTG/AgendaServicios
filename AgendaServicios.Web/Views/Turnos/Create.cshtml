@@ -14,12 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="FechaTurno" class="control-label"></label>
-                <input asp-for="FechaTurno" class="form-control" />
+                <input asp-for="FechaTurno" class="form-control" type="date" />
                 <span asp-validation-for="FechaTurno" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HoraTurno" class="control-label"></label>
-                <input asp-for="HoraTurno" class="form-control" />
+                <input asp-for="HoraTurno" class="form-control" type="time" />
                 <span asp-validation-for="HoraTurno" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -48,6 +48,10 @@
 
 <div>
     <a asp-action="Index">Regresar a la lista</a>
+</div>
+
+<div class="my-3 py-3">
+    <h4 class="alert-danger fst-italic">No genera nuevos turnos... EN REVISION</h4>
 </div>
 
 @section Scripts {
