@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AgendaServicios.Web.Models.EstadosTurno>
+
+@{
+    ViewData["Title"] = "Estados de Turno";
+}
+
+<h1>Estados de Turno</h1>
+
+<p>
+    <a asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EstadoTurnoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.EstadoTurnoId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.EstadoTurnoId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
