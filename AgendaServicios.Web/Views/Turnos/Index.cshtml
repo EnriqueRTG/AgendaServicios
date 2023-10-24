@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AgendaServicios.Web.Models.Turno>
+
+@{
+    ViewData["Title"] = "Turnos";
+}
+
+<h1>Turnos</h1>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaTurno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraTurno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoTurno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaTurno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraTurno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoTurno.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servicio.Descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TurnoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.TurnoId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.TurnoId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
