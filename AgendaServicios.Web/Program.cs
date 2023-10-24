@@ -13,7 +13,7 @@ namespace AgendaServicios.Web
 			builder.Services.AddDbContext<ApplicationDbContext>(
 					options =>
 							options.UseSqlServer(
-								builder.Configuration.GetConnectionString("AgendaServiciosDb")));
+								builder.Configuration.GetConnectionString("AgendaServiciosDbRemoto")));
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
