@@ -1,0 +1,7 @@
+Instalar paquetes Nuget
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
+scaffold-DbContext "Data Source=.\sqlexpress;Initial Catalog=AgendaServiciosLM;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -UseDatabaseNames -OutputDir Models -contextDir Data -Context ApplicationDbContext

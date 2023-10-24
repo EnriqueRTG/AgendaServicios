@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AgendaServicios.Web.Models.Servicio>
+
+@{
+	ViewData["Title"] = "Listado de Servicios";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+	<a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Descripcion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Precio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Duracion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Observacion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TipoServicio)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Descripcion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Precio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Duracion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Observacion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TipoServicio.Descripcion)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.ServicioId" class="btn btn-sm btn-warning" title="Editar">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a asp-action="Details" asp-route-id="@item.ServicioId" class="btn btn-sm btn-info" title="Detalle">
+						<i class="fas fa-info-circle"></i>
+					</a>
+					<a asp-action="Delete" asp-route-id="@item.ServicioId" class="btn btn-sm btn-danger" title="Eliminar">
+						<i class="fas fa-trash"></i>
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

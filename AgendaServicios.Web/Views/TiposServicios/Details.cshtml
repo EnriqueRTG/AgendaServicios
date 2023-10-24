@@ -1,0 +1,24 @@
+﻿@model AgendaServicios.Web.Models.TiposServicio
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>TiposServicio</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TipoServicioId" class="btn btn-sm btn-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-sm btn-secondary">Volver a la lista</a>
+</div>
